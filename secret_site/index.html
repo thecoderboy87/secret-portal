@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Vault</title>
+    <style>
+        body { 
+            background: #050505; 
+            color: #ff0055; 
+            font-family: monospace; 
+            padding: 50px; 
+            text-align: center; 
+            transition: all 0.5s ease;
+        }
+        /* Hidden until the easter egg is triggered */
+        #deep-secret {
+            display: none;
+            margin-top: 50px;
+            padding: 20px;
+            border: 2px dashed #00ff00;
+            color: #00ff00;
+            background: #001100;
+        }
+    </style>
+</head>
+<body>
+    <h1>CLASSIFIED ACCESS</h1>
+    <p>Welcome to the hidden side of the web.</p>
+    <p style="color: #444; font-size: 12px;">There is nothing else here... or is there?</p>
+
+    <!-- The Second Secret Content -->
+    <div id="deep-secret">
+        <h2>⚠️ LEVEL 2 ACCESS GRANTED ⚠️</h2>
+        <p>The subway project has been compromised. Proceed with caution.</p>
+    </div>
+
+    <script>
+    // The secret keyword to listen for
+    const targetWord = 'subway';
+    let typedBuffer = '';
+
+    window.addEventListener('keydown', (e) => {
+        // Only keep track of regular letter keys
+        if (e.key.length === 1) {
+            typedBuffer += e.key.toLowerCase();
+            
+            // Keep the buffer the exact length of our target word
+            typedBuffer = typedBuffer.slice(-targetWord.length);
+            
+            // Check if the typed letters match our secret word
+            if (typedBuffer === targetWord) {
+                triggerSecondEasterEgg();
+            }
+        }
+    });
+
+    function triggerSecondEasterEgg() {
+        alert("Deep Secret Unlocked!");
+        // Reveal the hidden section
+        document.getElementById('deep-secret').style.display = 'block';
+        // Change the page theme to green hacker mode
+        document.body.style.backgroundColor = '#000000';
+        document.body.style.color = '#00ff00';
+    }
+    </script>
+</body>
+</html>
+
