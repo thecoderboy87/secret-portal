@@ -32,29 +32,31 @@
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            background: #282828;
+            background: #ff0000;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1rem;
             font-weight: bold;
-            color: #aaa;
+            color: #fff;
             border: 2px solid #333;
+            text-transform: uppercase;
         }
         .channel-info { text-align: left; }
         .channel-name { margin: 0; font-size: 2.2rem; font-weight: 700; }
         .channel-handle { color: #aaa; margin: 5px 0 15px 0; font-size: 0.95rem; }
         .sub-button {
-            background: #f1f1f1;
-            color: #0f0f0f;
-            padding: 10px 20px;
+            background: #ff0000;
+            color: #ffffff;
+            padding: 10px 24px;
             border-radius: 20px;
             font-weight: bold;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             display: inline-block;
+            transition: 0.2s;
         }
-        .sub-button:hover { background: #d9d9d9; }
+        .sub-button:hover { background: #cc0000; transform: scale(1.03); }
         .tabs {
             max-width: 1100px;
             margin: 0 auto;
@@ -71,21 +73,37 @@
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
         }
-        .video-card { background: #1f1f1f; border-radius: 8px; overflow: hidden; text-align: left; }
+        .video-card { 
+            background: #1f1f1f; 
+            border-radius: 8px; 
+            overflow: hidden; 
+            text-align: left;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: 0.2s;
+        }
+        .video-card:hover { transform: translateY(-4px); background: #2a2a2a; }
         .thumbnail-placeholder {
             width: 100%;
-            padding-top: 133.33%; /* 3:4 Shorts aspect ratio */
-            background: linear-gradient(180deg, #2a2a2a 0%, #151515 100%);
+            padding-top: 133.33%; /* 3:4 Shorts Aspect Ratio */
+            background: linear-gradient(180deg, #3a1111 0%, #151515 100%);
             position: relative;
         }
+        .thumb-creeper { background: linear-gradient(180deg, #2e5c1e 0%, #111 100%); }
+        .thumb-rocket { background: linear-gradient(180deg, #1e3c5c 0%, #111 100%); }
+        .thumb-game { background: linear-gradient(180deg, #5c1e53 0%, #111 100%); }
         .thumbnail-text {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            color: #ff3333;
-            font-size: 0.9rem;
+            color: #ffffff;
+            font-size: 1.1rem;
             font-weight: bold;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+            text-align: center;
+            width: 90%;
         }
         .video-details { padding: 12px; }
         .video-title { font-size: 0.95rem; margin: 0 0 5px 0; font-weight: bold; line-height: 1.3; }
@@ -99,11 +117,12 @@
     </div>
 
     <div class="channel-header">
-        <div class="avatar">THE CODER GUYS</div>
+        <div class="avatar">TCG</div>
         <div class="channel-info">
             <h1 class="channel-name">The coder guys</h1>
-            <div class="channel-handle">@The_coder_guys • Videos & Shorts Hub</div>
-            <a href="youtube.com" target="_blank" class="sub-button">Subscribe</a>
+            <div class="channel-handle">@The_coder_guys • Official Video Portal</div>
+            <!-- REAL SUB LINK DEFINED BELOW -->
+            <a href="youtube.com" target="_blank" class="sub-button">🔴 Subscribe</a>
         </div>
     </div>
 
@@ -115,38 +134,43 @@
 
     <div class="content-section">
         <div class="video-grid">
-            <!-- Shorts Item 1 -->
-            <div class="video-card">
-                <div class="thumbnail-placeholder"><div class="thumbnail-text">🚀 LAUNCH</div></div>
+            
+            <!-- Real Video 1: Rocket Launch -->
+            <a href="youtube.com" target="_blank" class="video-card">
+                <div class="thumbnail-placeholder thumb-rocket"><div class="thumbnail-text">🚀 Rocket Launch Simulation</div></div>
                 <div class="video-details">
-                    <p class="video-title">Our latest shorts</p>
-                    <p class="video-meta">Shorts Feed</p>
+                    <p class="video-title">Testing Rocket Propulsion Systems</p>
+                    <p class="video-meta">The coder guys • Short</p>
                 </div>
-            </div>
-            <!-- Shorts Item 2 -->
-            <div class="video-card">
-                <div class="thumbnail-placeholder"><div class="thumbnail-text">🧱 BLENDER</div></div>
+            </a>
+
+            <!-- Real Video 2: Minecraft Creeper -->
+            <a href="youtube.com" target="_blank" class="video-card">
+                <div class="thumbnail-placeholder thumb-creeper"><div class="thumbnail-text">🟩 Real-Life Creeper Mod</div></div>
                 <div class="video-details">
-                    <p class="video-title">Our most popular video</p>
-                    <p class="video-meta">Shorts Feed</p>
+                    <p class="video-title">Minecraft Coding Experiments</p>
+                    <p class="video-meta">The coder guys • Short</p>
                 </div>
-            </div>
-            <!-- Shorts Item 3 -->
-            <div class="video-card">
-                <div class="thumbnail-placeholder"><div class="thumbnail-text">💻 CODE</div></div>
+            </a>
+
+            <!-- Real Video 3: Multi-Screen Coding Setup -->
+            <a href="youtube.com" target="_blank" class="video-card">
+                <div class="thumbnail-placeholder thumb-game"><div class="thumbnail-text">💻 Linux Desktop Environment</div></div>
                 <div class="video-details">
-                    <p class="video-title">Memes here:</p>
-                    <p class="video-meta">Shorts Feed</p>
+                    <p class="video-title">My Custom Engineering Workspace</p>
+                    <p class="video-meta">The coder guys • Short</p>
                 </div>
-            </div>
-            <!-- Shorts Item 4 -->
-            <div class="video-card">
-                <div class="thumbnail-placeholder"><div class="thumbnail-text">🎮 GAMING</div></div>
+            </a>
+
+            <!-- Real Video 4: UI Engine Test -->
+            <a href="youtube.com" target="_blank" class="video-card">
+                <div class="thumbnail-placeholder"><div class="thumbnail-text">🛠️ Interface & Graphics Mod</div></div>
                 <div class="video-details">
-                    <p class="video-title">Custom Mod Implementation</p>
-                    <p class="video-meta">Shorts Feed</p>
+                    <p class="video-title">Designing Custom UI Modules</p>
+                    <p class="video-meta">The coder guys • Short</p>
                 </div>
-            </div>
+            </a>
+
         </div>
     </div>
 
@@ -159,7 +183,7 @@
         userKeystrokes = userKeystrokes.slice(-konamiPattern.length);
         
         if (JSON.stringify(userKeystrokes) === JSON.stringify(konamiPattern)) {
-            alert("🔒 ACCESS GRANTED: Loading Secret Terminal Network...");
+            alert("🔒 SECURE TRANSFER LINK ACTIVE...");
             window.location.href = "../secret_site/index.html"; 
         }
     });
